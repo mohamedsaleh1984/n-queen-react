@@ -3,8 +3,7 @@ import "./Board.css";
 
 export default function Board() {
   const BOARD_SIZE = 8;
-  // const [setRows,Rows] = BOARD_SIZE;
-  // const [setCols,Cols] = BOARD_SIZE;
+
   let Board = Array(BOARD_SIZE)
     .fill(false)
     .map((row) => new Array(BOARD_SIZE).fill(false));
@@ -15,6 +14,8 @@ export default function Board() {
     let color = result % 2 ? "white" : "gray";
     return color;
   }
+
+  
 
   return (
     <div className="board">
