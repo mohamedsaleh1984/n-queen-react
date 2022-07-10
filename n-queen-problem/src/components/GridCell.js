@@ -9,10 +9,12 @@ export default function GridCell(props) {
 
   const [occupied, setOccupied] = useState(false);
 
-  const onCellClick = () => {
-    setOccupied(!occupied);
+  const onCellClick = async () => {
+    const newOccupied = !occupied;
+    setOccupied(newOccupied);
+    props.parentCallback(newOccupied);
   };
-  
+
   useEffect(() => {}, [occupied]);
 
   return (
@@ -26,7 +28,7 @@ export default function GridCell(props) {
       onClick={onCellClick}
     >
       {occupied && (
-        <div style={{ textAlign: "center", }}>
+        <div style={{ textAlign: "center" }}>
           <img src={queen} width={WIDTH - 10} height={HEIGHT - 10} />
         </div>
       )}
