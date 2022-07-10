@@ -1,0 +1,4 @@
+.gridcell{
+    display: flex;
+    cursor: pointer;
+}
