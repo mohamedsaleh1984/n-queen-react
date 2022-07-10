@@ -10,9 +10,9 @@ export default function Board() {
     .map((row) => new Array(BOARD_SIZE).fill(false));
 
   function getColor(rowIndex, columnIndex) {
-    if (rowIndex == 0 && columnIndex == 0) return "black";
+    if (rowIndex == 0 && columnIndex == 0) return "gray";
     let result = rowIndex + columnIndex;
-    let color = result % 2 ? "white" : "black";
+    let color = result % 2 ? "white" : "gray";
     return color;
   }
 

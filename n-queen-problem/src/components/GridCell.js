@@ -10,10 +10,9 @@ export default function GridCell(props) {
   const [occupied, setOccupied] = useState(false);
 
   const onCellClick = () => {
-    console.log();
     setOccupied(!occupied);
-    console.log(occupied);
   };
+  
   useEffect(() => {}, [occupied]);
 
   return (
