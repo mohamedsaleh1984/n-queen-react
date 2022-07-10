@@ -25,33 +25,40 @@ export default function Board() {
     return color;
   }
 
+  function PlayGroundHeader(props) {
+    const queens = props.queens;
+    return (
+      <div>
+        <h3>Placed Queens {{ queens }}</h3>
+      </div>
+    );
+  }
+
   return (
     <div className="board">
       <h1 className="eq-header">8 Queen Problem</h1>
       <div className="board-container">
-        <div>
-
-        </div>
+        <div>{/* <PlayGroundHeader queens={queens}/> */}</div>
         <div className="playground">
-        {Board.map((row, rowIndex) => {
-          return (
-            <div style={{ display: "flex" }}>
-              {row.map((cols, columnIndex) => {
-                return (
-                  <div>
-                    <GridCell
-                      rowIndex={rowIndex}
-                      columnIndex={columnIndex}
-                      color={getColor(rowIndex, columnIndex)}
-                      parentCallback={handleCallback}
-                      queens={queens}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+          {Board.map((row, rowIndex) => {
+            return (
+              <div style={{ display: "flex" }}  key={Math.random() * 1000}>
+                {row.map((cols, columnIndex) => {
+                  return (
+                    <div key={Math.random() * 100}>
+                      <GridCell
+                        rowIndex={rowIndex}
+                        columnIndex={columnIndex}
+                        color={getColor(rowIndex, columnIndex)}
+                        parentCallback={handleCallback}
+                        queens={queens}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
