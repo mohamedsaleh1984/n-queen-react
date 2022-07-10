@@ -27,25 +27,33 @@ export default function Board() {
 
   return (
     <div className="board">
-      {Board.map((row, rowIndex) => {
-        return (
-          <div style={{ display: "flex" }}>
-            {row.map((cols, columnIndex) => {
-              return (
-                <div>
-                  <GridCell
-                    rowIndex={rowIndex}
-                    columnIndex={columnIndex}
-                    color={getColor(rowIndex, columnIndex)}
-                    parentCallback={handleCallback}
-                    queens={queens}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
+      <h1 className="eq-header">8 Queen Problem</h1>
+      <div className="board-container">
+        <div>
+
+        </div>
+        <div className="playground">
+        {Board.map((row, rowIndex) => {
+          return (
+            <div style={{ display: "flex" }}>
+              {row.map((cols, columnIndex) => {
+                return (
+                  <div>
+                    <GridCell
+                      rowIndex={rowIndex}
+                      columnIndex={columnIndex}
+                      color={getColor(rowIndex, columnIndex)}
+                      parentCallback={handleCallback}
+                      queens={queens}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+        </div>
+      </div>
     </div>
   );
 }

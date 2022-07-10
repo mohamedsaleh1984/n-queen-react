@@ -1,3 +1,19 @@
-.board{
-    color: gray;
+.board {
+  color: gray;
+}
+.eq-header {
+  color: bisque;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.board-container {
+  display: block;
+  text-align: center;
+}
+
+.playground {
+  width: 40%;
+  margin: auto;
 }
